@@ -1,0 +1,23 @@
+name: Laravel
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy to Production
+      uses: appleboy/ssh-action@master
+      with:
+        host: ugo-holiday.com
+        username: ugohoday
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: 2222
+        script: |
+          cd /applications/ForSample
+          git fetch origin main
+          git reset --hard FETCH_HEAD
+          git clean -d -f --exclude secrets
