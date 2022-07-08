@@ -16,4 +16,5 @@ jobs:
         username: ugohoday
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
-        script: |
+        use_insecure_cipher: true
+        
