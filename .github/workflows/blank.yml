@@ -18,6 +18,6 @@ jobs:
         port: 22
         use_insecure_cipher: true
         script: |
-          cd applications/Galactica
+          cd applications/ForSample
           touch jofie.html
         
