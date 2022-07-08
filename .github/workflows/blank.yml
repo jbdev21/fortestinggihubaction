@@ -17,4 +17,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         port: 22
         use_insecure_cipher: true
+        script: |
+          cd applications/Galactica
+          touch jofie.html
         
