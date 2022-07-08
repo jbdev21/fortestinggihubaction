@@ -19,5 +19,5 @@ jobs:
         use_insecure_cipher: true
         script: |
           cd applications/ForSample
-          touch jofie.html
+          git pull origin main
         
