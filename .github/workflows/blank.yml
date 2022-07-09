@@ -12,12 +12,11 @@ jobs:
     - name: Deploy to Production
       uses: appleboy/ssh-action@master
       with:
-        host: 192.185.52.10
-        username: ugohoday
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        host: ge-dev-01.designa.studio
+        username: www-data
+        key: ${{ secrets.SSH_DESIGNA_DEV_PRIVATE_KEY }}
         port: 22
         use_insecure_cipher: true
         script: |
-          cd applications/ForSample
-          git pull origin main
+          cd designa.studio/dev/designa-app
         
